@@ -1,0 +1,20 @@
+service: sls-sep-2022
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+
+functions:
+  getUsers:
+    handler: index.getUsers
+    events:
+      - httpApi:
+          path: /users
+          method: get
+  getCars:
+    handler: index.getCars
+    events:
+      - httpApi:
+          path: /cars
+          method: get
