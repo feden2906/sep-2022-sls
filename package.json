@@ -2,10 +2,24 @@
   "name": "sls-sep-2022",
   "version": "1.0.0",
   "description": "sls serverless sep-2022",
-  "main": "index.js",
+  "main": "src/handlers/index.js",
   "scripts": {
+    "start:local": "sls offline start",
+    "start:dev": "NODE_ENV=dev sls offline start",
+    "start:prod": "NODE_ENV=prod sls offline start",
+    "deploy:dev": "sls deploy --stage dev",
+    "deploy:prod": "sls deploy --stage prod",
+    "remove:dev": "sls remove --stage dev",
+    "remove:prod": "sls remove --stage prod",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "feden",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^5.2.0",
+    "serverless-dotenv-plugin": "^6.0.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^12.0.4"
+  }
 }
